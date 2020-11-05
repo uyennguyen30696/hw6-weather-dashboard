@@ -14,7 +14,7 @@
     float: left;
     padding: 20px;
     /* background-color: #E9ECEF; */
-    width: 30%;
+    width: 30% !important;
     border: solid 2px;
     border-color: #0077B6;
 }
@@ -42,17 +42,34 @@
 .weather-view {
     position: relative;
     padding: 20px;
-    padding-bottom: 200px;
+    padding-bottom: 50px;
     float: right;
-    width: 65%;
+    width: 65% !important;
     /* background-color: #E9ECEF; */
     border: solid 2px;
     border-color: #0077B6;
 }
 
+.current-weather {
+    margin-bottom: 10px;
+    line-height: 2em;
+}
+
 h3 {
+    background-color: #0077B6;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #0077B6;
+    /* color: #0077B6; */
+    padding: 5px;
+    color: white;
+}
+
+.forecast-display {
+    /* border: solid 1px;
+    border-color: #00B4D8; */
+    margin-bottom: 20px;
+    width: 50%;
+    line-height: 2em;
+    /* padding: 10px; */
 }
 
 .clearfix::after {
@@ -66,7 +83,7 @@ h3 {
         position: relative;
         float: left;
         padding: 0;
-        width: 40%;
+        width: 40% !important;
         border: solid 2px;
         border-color: #0077B6;
     }
@@ -91,9 +108,9 @@ h3 {
     .weather-view {
         position: relative;
         padding: 20px;
-        padding-bottom: 200px;
+        padding-bottom: 50px;
         float: right;
-        width: 55%;
+        width: 55% !important;
         border: solid 2px;
         border-color: #0077B6;
     }
@@ -108,4 +125,28 @@ h3 {
         margin-right: 10px;
         margin-bottom: 5px;
     }
+}
+
+@media (min-width: 700px) {
+    .search-cities {
+        position: relative;
+        float: left;
+        padding: 20px;
+        /* background-color: #E9ECEF; */
+        width: 30% !important;
+        border: solid 2px;
+        border-color: #0077B6;
+    }
+
+    .weather-view {
+        position: relative;
+        padding: 20px;
+        padding-bottom: 50px;
+        float: right;
+        width: 65% !important;
+        /* background-color: #E9ECEF; */
+        border: solid 2px;
+        border-color: #0077B6;
+    }
+    
 }
