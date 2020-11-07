@@ -251,5 +251,15 @@ $("#btn8").on("click", function (event) {
     displaySantaCruz();
 });
 
+/* // Pass the city input to the function when the pastButton is clicked as well
+$("#past-button").on("click", function (event) {
+    event.preventDefault()
 
+    let lastCity = localStorage.getItem("city name");
+    
+    // Display current weather
+    searchWeather(lastCity);
+    // Display 5 days forecast
+    forecast(lastCity);
+}); */
 

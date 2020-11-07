@@ -36,11 +36,36 @@ $("#search-button").on("click", function (event) {
     let cityInput = $("#city-input").val()
     console.log(cityInput);
 
+    // Save city search result in local storage
+    localStorage.setItem("city name", cityInput);
+    // Display the button with the city that has been searched
+    pastButton.removeAttribute("class", "hide");
+    pastButton.setAttribute("class", "btn btn-outline-primary btn-lg btn-block");
+    pastButton.innerHTML = cityInput;
+
     // Display current weather
     searchWeather(cityInput);
     // Display 5 days forecast
     forecast(cityInput);
 });
+
+// Load data from local storage and display as a new button in the cities div when the browswer is refreshed
+let pastButton = document.createElement("button");
+pastButton.setAttribute("id", "past-button");
+pastButton.setAttribute("class", "hide");
+let lastCity = localStorage.getItem("city name");
+pastButton.innerHTML = lastCity;
+$(".cities").prepend(pastButton);
+
+if (!lastCity) {
+    // If there is not history search, hide the button
+    pastButton.setAttribute("class", "hide");
+}
+else if (lastCity) {
+    // If there is history search, the most recent search is displayed in the button
+    pastButton.setAttribute("class", "btn btn-outline-primary btn-lg btn-block");
+    pastButton.innerHTML = lastCity;
+}
 
 // Clear search result
 $("#clear-button").on("click", function (event) {
@@ -81,6 +106,9 @@ $("#clear-button").on("click", function (event) {
     $(".temp5").text("");
     $(".wind5").text("");
     $(".humidity5").text("");
+
+    pastButton.setAttribute("class", "hide");
+    localStorage.removeItem("city name");
 });
 
 // 5 days weather forecast
@@ -99,7 +127,7 @@ function forecast(city) {
         $("#5-day-forecast").text("5 days forecast");
 
         // Date 1
-        $(".date1").text(response.list[0].dt_txt);
+        $(".date1").text(response.list[0].dt_txt.substring(0,10));
 
         // Convert temp in Kelvin to F and transfer to html
         var tempF = (response.list[0].main.temp - 273.15) * 1.80 + 32;
@@ -112,7 +140,7 @@ function forecast(city) {
         $(".humidity1").text("Humidity: " + response.list[0].main.humidity + "%");
 
         // Date 2
-        $(".date2").text(response.list[8].dt_txt);
+        $(".date2").text(response.list[8].dt_txt.substring(0,10));
 
         // Convert temp in Kelvin to F and transfer to html
         var tempF = (response.list[8].main.temp - 273.15) * 1.80 + 32;
@@ -125,7 +153,7 @@ function forecast(city) {
         $(".humidity2").text("Humidity: " + response.list[8].main.humidity + "%");
 
         // Date 3
-        $(".date3").text(response.list[16].dt_txt);
+        $(".date3").text(response.list[16].dt_txt.substring(0,10));
 
         // Convert temp in Kelvin to F and transfer to html
         var tempF = (response.list[16].main.temp - 273.15) * 1.80 + 32;
@@ -138,7 +166,7 @@ function forecast(city) {
         $(".humidity3").text("Humidity: " + response.list[16].main.humidity + "%");
 
         // Date 4
-        $(".date4").text(response.list[24].dt_txt);
+        $(".date4").text(response.list[24].dt_txt.substring(0,10));
 
         // Convert temp in Kelvin to F and transfer to html
         var tempF = (response.list[24].main.temp - 273.15) * 1.80 + 32;
@@ -151,7 +179,7 @@ function forecast(city) {
         $(".humidity4").text("Humidity: " + response.list[24].main.humidity + "%");
 
         // Date 5
-        $(".date5").text(response.list[32].dt_txt);
+        $(".date5").text(response.list[32].dt_txt.substring(0,10));
 
         // Convert temp in Kelvin to F and transfer to html
         var tempF = (response.list[32].main.temp - 273.15) * 1.80 + 32;
@@ -164,10 +192,7 @@ function forecast(city) {
         $(".humidity5").text("Humidity: " + response.list[32].main.humidity + "%");
     
     });
-
 }
-
-
 
 
 
