@@ -50,6 +50,38 @@ function searchWeather(city) {
 
             // Display uv index in the browswer
             $(".uv").text("UV index: " + response.value);
+
+            // Color to demonstrate uv index scale
+            if (response.value < 3) {
+                $(".uv").css("border", "solid");
+                $(".uv").css("border-color", "green");
+                $(".uv").css("width", "150px");
+                $(".uv").text("UV index: " + response.value);
+            }
+            else if (response.value >= 3 && response.value < 6) {
+                $(".uv").css("border", "solid");
+                $(".uv").css("border-color", "yellow");
+                $(".uv").css("width", "150px");
+                $(".uv").text("UV index: " + response.value);
+            }
+            else if (response.value >= 6 && response.value < 8) {
+                $(".uv").css("border", "solid");
+                $(".uv").css("border-color", "orange");
+                $(".uv").css("width", "150px");
+                $(".uv").text("UV index: " + response.value);
+            }
+            else if (response.value >= 8 && response.value < 11) {
+                $(".uv").css("border", "solid");
+                $(".uv").css("border-color", "red");
+                $(".uv").css("width", "150px");
+                $(".uv").text("UV index: " + response.value);
+            }
+            else {
+                $(".uv").css("border", "solid");
+                $(".uv").css("border-color", "purple");
+                $(".uv").css("width", "150px");
+                $(".uv").text("UV index: " + response.value);
+            }
         });
 
         // Forecast uv index
@@ -62,17 +94,21 @@ function searchWeather(city) {
             console.log(response);
 
             // Store forecast uv index in local storage
-            localStorage.setItem("uv2", response[0].value);
-            localStorage.setItem("uv3", response[1].value);
-            localStorage.setItem("uv4", response[2].value);
-            localStorage.setItem("uv5", response[3].value);
+            localStorage.setItem("uv1", response[0].value);
+            localStorage.setItem("uv2", response[1].value);
+            localStorage.setItem("uv3", response[2].value);
+            localStorage.setItem("uv4", response[3].value);
+            localStorage.setItem("uv5", response[4].value);
 
             // Get 5 days forecast uv index from local storage
+            var uv1 = localStorage.getItem("uv1");
             var uv2 = localStorage.getItem("uv2");
             var uv3 = localStorage.getItem("uv3");
             var uv4 = localStorage.getItem("uv4");
             var uv5 = localStorage.getItem("uv5");
 
+            $(".uv1").text("UV index: " + uv1);
+            console.log(uv1);
             $(".uv2").text("UV index: " + uv2);
             console.log(uv2);
             $(".uv3").text("UV index: " + uv3);
@@ -81,6 +117,25 @@ function searchWeather(city) {
             console.log(uv4);
             $(".uv5").text("UV index: " + uv5);
             console.log(uv5);
+
+            // Color to demonstrate uv index scale for 5 days
+            
+        });
+
+        // Icon for weather condition
+        var iconCode = response.weather[0].icon;
+        var queryIconURL = "http://openweathermap.org/img/wn/" + iconCode + ".png";
+
+        $.ajax({
+            url: queryIconURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+
+            // Display icon
+            $("#current-icon").removeClass("hide-image");
+            $("#current-icon").attr("src", queryIconURL);
+
         });
     });
 }
@@ -98,7 +153,7 @@ function renderButtons() {
         newPastBtn.text(cities[i]);
         $(".cities").prepend(newPastBtn);
 
-// Still need to be fixed, when a new button is prepend then clicked, the curren weather an 5 days weather forecast should be displayed on the browswer as well
+        // Still need to be fixed, when a new button is prepend then clicked, the curren weather an 5 days weather forecast should be displayed on the browswer as well
         // $(".newPastBtn-button").on("click", function (event) {
         //     event.preventDefault()
 
@@ -112,9 +167,9 @@ function renderButtons() {
     }
     // $(".btn").on("click", function (event) {
     //     event.preventDefault()
-    
+
     //     // let lastCity = localStorage.getItem("city name");
-    
+
     //     // Display current weather
     //     searchWeather();
     //     // Display 5 days forecast
@@ -158,6 +213,10 @@ $("#search-button").on("click", function (event) {
     cities.push(lastCity);
     renderButtons();
 
+    // Display current weather 5 days weather forecast
+    $(".current-weather").removeClass("hide");
+    $(".forecast-display").removeClass("hide");
+
     // Display current weather
     searchWeather(cityInput);
     // Display 5 days forecast
@@ -171,11 +230,12 @@ $("#past-button").on("click", function (event) {
 
     let lastCity = localStorage.getItem("city name");
 
+    // Display current weather and 5 days forecast
+    $(".current-weather").removeClass("hide");
+    $(".forecast-display").removeClass("hide");
+
     // Display current weather
     searchWeather(lastCity);
     // Display 5 days forecast
     forecast(lastCity);
 });
-
-// $(document).on("click", ".btn", searchWeather);
-// $(document).on("click", ".btn", forecast);

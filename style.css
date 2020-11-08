@@ -13,7 +13,7 @@
     position: relative;
     float: left;
     padding: 20px;
-    /* background-color: #E9ECEF; */
+    background-color: #E3ECF3; 
     width: 30% !important;
     border: solid 2px;
     border-color: #0077B6;
@@ -34,9 +34,17 @@
     border: none;
 }
 
-.past-button {
+#past-button {
     padding-bottom: 10px;
     margin-bottom: 10px;
+    color: #0077B6;
+    background-color: white;
+
+}
+
+#past-button:hover {
+    background-color: #0077B6 !important;
+    color: white !important;
 }
 
 .hide {
@@ -54,14 +62,22 @@
     padding-bottom: 50px;
     float: right;
     width: 65% !important;
-    /* background-color: #E9ECEF; */
+    background-color: #E3ECF3; 
     border: solid 2px;
     border-color: #0077B6;
+}
+
+.hide-image {
+    display: none;
 }
 
 .current-weather {
     margin-bottom: 10px;
     line-height: 2em;
+    background-color: #0077B6;
+    padding: 20px;
+    width: 200px;
+    color: white;
 }
 
 h3 {
@@ -79,10 +95,17 @@ h3 {
 .forecast-display {
     /* border: solid 1px;
     border-color: #00B4D8; */
+    margin-right: 0px;
     margin-bottom: 20px;
-    width: 50%;
+    width: 200px;
     line-height: 2em;
-    /* padding: 10px; */
+    padding: 10px;  
+    background-color: #0077B6;
+    color: white;
+}
+
+.uv {
+    padding-left: 5px;
 }
 
 .clearfix::after {
