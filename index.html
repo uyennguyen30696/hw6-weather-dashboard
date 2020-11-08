@@ -28,20 +28,21 @@
             <div class="clear">
                 <button id="clear-button">Clear result</button>
             </div>
-
+        
+            <!-- These buttons are for an earlier version but are not used now, except past-button that is created dynamically in the script.js file-->
             <div class="cities">
-                <div id="suggested-cities">
-                <h3>Suggested cities</h3>
-                </div>
-                <button id="btn1" type="button" class="btn btn-outline-primary btn-lg btn-block">San Jose</button>
+                <!-- <div id="suggested-cities"> -->
+                <!-- <h3>Suggested cities</h3> -->
+                <!-- </div> --> 
+                <!-- <button id="btn1" type="button" class="btn btn-outline-primary btn-lg btn-block">San Jose</button>
                 <button id="btn2" type="button" class="btn btn-outline-primary btn-lg btn-block">Cupertino</button>
                 <button id="btn3" type="button" class="btn btn-outline-primary btn-lg btn-block">Mountain View</button>
                 <button id="btn4" type="button" class="btn btn-outline-primary btn-lg btn-block">Fremont</button>
                 <button id="btn5" type="button" class="btn btn-outline-primary btn-lg btn-block">San Francisco</button>
                 <button id="btn6" type="button" class="btn btn-outline-primary btn-lg btn-block">Oakland</button>
-                <button id="btn7" type="button" class="btn btn-outline-primary btn-lg btn-block">Napa Valley</button>
-                <button id="btn8" type="button" class="btn btn-outline-primary btn-lg btn-block">Santa Cruz</button>
-            </div>
+                <button id="btn7" type="button" class="btn btn-outline-primary btn-lg btn-block">Napa Valley</button> -->
+                <!-- <button id="btn8" type="button" class="btn btn-outline-primary btn-lg btn-block">Santa Cruz</button> -->
+            </div>  
 
         </div>
 
@@ -55,6 +56,7 @@
                 <div class="temp"></div>
                 <div class="wind"></div>
                 <div class="humidity"></div>
+                <div class="uv"></div>
             </div>
             <br>
 
@@ -68,6 +70,7 @@
                     <div class="temp1"></div>
                     <div class="wind1"></div>
                     <div class="humidity1"></div>
+                    <div class="uv1"></div>
                 </div>
 
 
@@ -76,6 +79,7 @@
                     <div class="temp2"></div>
                     <div class="wind2"></div>
                     <div class="humidity2"></div>
+                    <div class="uv2"></div>
                 </div>
 
                 <div class="forecast-display">
@@ -83,6 +87,7 @@
                     <div class="temp3"></div>
                     <div class="wind3"></div>
                     <div class="humidity3"></div>
+                    <div class="uv3"></div>
                 </div>
 
                 <div class="forecast-display">
@@ -90,6 +95,7 @@
                     <div class="temp4"></div>
                     <div class="wind4"></div>
                     <div class="humidity4"></div>
+                    <div class="uv4"></div>
                 </div>
 
                 <div class="forecast-display">
@@ -97,14 +103,18 @@
                     <div class="temp5"></div>
                     <div class="wind5"></div>
                     <div class="humidity5"></div>
+                    <div class="uv5"></div>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Link the js logics -->
-    <script src="script.js"></script>
-    <script src="script2.js"></script>
+    <script src="./assets-js/script.js"></script>
+    <!-- <script src="./assets-js/suggestedques.js"></script> -->
+    <script src="./assets-js/clearbtn.js"></script>
+    <script src="./assets-js/5daysforecast.js"></script>
+
 
     <!-- Link jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

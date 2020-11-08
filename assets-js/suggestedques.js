@@ -1,3 +1,5 @@
+// This file is for an earlier version but is not linked to the html file now
+
 var APIKey = "4ed4fdd9e1df72d92604a798aab2c98e";
 
 // Grab weather information for cities in the suggested list
@@ -251,15 +253,6 @@ $("#btn8").on("click", function (event) {
     displaySantaCruz();
 });
 
-/* // Pass the city input to the function when the pastButton is clicked as well
-$("#past-button").on("click", function (event) {
-    event.preventDefault()
+ 
 
-    let lastCity = localStorage.getItem("city name");
-    
-    // Display current weather
-    searchWeather(lastCity);
-    // Display 5 days forecast
-    forecast(lastCity);
-}); */
-
+$(document).on("click", ".btn", searchWeather);
