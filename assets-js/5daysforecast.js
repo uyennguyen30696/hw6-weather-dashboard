@@ -1,7 +1,7 @@
 // 5 days weather forecast
 function forecast(city) {
 
-    var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIKey;
+    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIKey;
 
     $.ajax({
         url: queryURL,
@@ -28,7 +28,7 @@ function forecast(city) {
 
         // Icon for weather condition
         var iconCode1 = response.list[0].weather[0].icon;
-        var queryIcon1URL = "http://openweathermap.org/img/wn/" + iconCode1 + ".png";
+        var queryIcon1URL = "https://openweathermap.org/img/wn/" + iconCode1 + ".png";
 
         $.ajax({
             url: queryIcon1URL,
@@ -57,7 +57,7 @@ function forecast(city) {
 
         // Icon for weather condition
         var iconCode2 = response.list[1].weather[0].icon;
-        var queryIcon2URL = "http://openweathermap.org/img/wn/" + iconCode2 + ".png";
+        var queryIcon2URL = "https://openweathermap.org/img/wn/" + iconCode2 + ".png";
 
         $.ajax({
             url: queryIcon2URL,
@@ -86,7 +86,7 @@ function forecast(city) {
 
         // Icon for weather condition
         var iconCode3 = response.list[2].weather[0].icon;
-        var queryIcon3URL = "http://openweathermap.org/img/wn/" + iconCode3 + ".png";
+        var queryIcon3URL = "https://openweathermap.org/img/wn/" + iconCode3 + ".png";
 
         $.ajax({
             url: queryIcon3URL,
@@ -115,7 +115,7 @@ function forecast(city) {
 
         // Icon for weather condition
         var iconCode4 = response.list[3].weather[0].icon;
-        var queryIcon4URL = "http://openweathermap.org/img/wn/" + iconCode4 + ".png";
+        var queryIcon4URL = "https://openweathermap.org/img/wn/" + iconCode4 + ".png";
 
         $.ajax({
             url: queryIcon1URL,
@@ -144,7 +144,7 @@ function forecast(city) {
     
         // Icon for weather condition
         var iconCode5 = response.list[4].weather[0].icon;
-        var queryIcon5URL = "http://openweathermap.org/img/wn/" + iconCode5 + ".png";
+        var queryIcon5URL = "https://openweathermap.org/img/wn/" + iconCode5 + ".png";
 
         $.ajax({
             url: queryIcon5URL,

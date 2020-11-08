@@ -6,7 +6,7 @@ var APIKey = "4ed4fdd9e1df72d92604a798aab2c98e";
 // Grab weather information for cities through the search bar
 function searchWeather(city) {
 
-    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" +
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" +
         city + "&appid=" + APIKey;
 
     $.ajax({
@@ -40,7 +40,7 @@ function searchWeather(city) {
 
 
         // Current UV index
-        queryUVURL = "http://api.openweathermap.org/data/2.5/uvi?" + "lat=" + lat + "&lon=" + lon + "&appid=" + APIKey;
+        queryUVURL = "https://api.openweathermap.org/data/2.5/uvi?" + "lat=" + lat + "&lon=" + lon + "&appid=" + APIKey;
 
         $.ajax({
             url: queryUVURL,
@@ -85,7 +85,7 @@ function searchWeather(city) {
         });
 
         // Forecast uv index
-        var queryUVForecastURL = "http://api.openweathermap.org/data/2.5/uvi/forecast?" + "lat=" + lat + "&lon=" + lon + "&appid=" + APIKey;
+        var queryUVForecastURL = "https://api.openweathermap.org/data/2.5/uvi/forecast?" + "lat=" + lat + "&lon=" + lon + "&appid=" + APIKey;
 
         $.ajax({
             url: queryUVForecastURL,
@@ -124,7 +124,7 @@ function searchWeather(city) {
 
         // Icon for weather condition
         var iconCode = response.weather[0].icon;
-        var queryIconURL = "http://openweathermap.org/img/wn/" + iconCode + ".png";
+        var queryIconURL = "https://openweathermap.org/img/wn/" + iconCode + ".png";
 
         $.ajax({
             url: queryIconURL,
