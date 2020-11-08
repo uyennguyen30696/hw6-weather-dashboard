@@ -76,7 +76,7 @@
     line-height: 2em;
     background-color: #0077B6;
     padding: 20px;
-    width: 200px;
+    width: 200px !important;
     color: white;
 }
 
@@ -97,7 +97,7 @@ h3 {
     border-color: #00B4D8; */
     margin-right: 0px;
     margin-bottom: 20px;
-    width: 200px;
+    width: 200px !important;
     line-height: 2em;
     padding: 10px;  
     background-color: #0077B6;
@@ -114,7 +114,7 @@ h3 {
     clear: both;
 }
 
-@media (min-width: 300px) {
+@media (max-width: 400px) {
     .search-cities {
         position: relative;
         float: left;
@@ -149,6 +149,26 @@ h3 {
         width: 55% !important;
         border: solid 2px;
         border-color: #0077B6;
+    }
+    .current-weather {
+        margin-bottom: 10px;
+        line-height: 2em;
+        background-color: #0077B6;
+        padding: 20px;
+        width: 160px !important;
+        color: white;
+    }
+
+    .forecast-display {
+        /* border: solid 1px;
+        border-color: #00B4D8; */
+        margin-right: 0px;
+        margin-bottom: 20px;
+        width: 160px !important;
+        line-height: 2em;
+        padding: 10px;  
+        background-color: #0077B6;
+        color: white;
     }
 
     .btn {
