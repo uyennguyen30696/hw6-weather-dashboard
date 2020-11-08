@@ -6,7 +6,7 @@ var APIKey = "4ed4fdd9e1df72d92604a798aab2c98e";
 
 // San Jose
 function displaySanJose() {
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
+    var queryURL = "http://api.openweathermap.org/data/2.5/weather?" +
     "q=san jose&appid=" + APIKey;
 
     $.ajax({
@@ -38,7 +38,7 @@ $("#btn1").on("click", function (event) {
 
 // Cupertino
 function displayCupertino() {
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
+    var queryURL = "http://api.openweathermap.org/data/2.5/weather?" +
     "q=cupertino&appid=" + APIKey;
 
     $.ajax({
@@ -69,7 +69,7 @@ $("#btn2").on("click", function (event) {
 
 // Mountain View
 function displayMountainView() {
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
+    var queryURL = "http://api.openweathermap.org/data/2.5/weather?" +
     "q=mountain view&appid=" + APIKey;
 
     $.ajax({
@@ -100,7 +100,7 @@ $("#btn3").on("click", function (event) {
 
 // Fremont
 function displayFremont() {
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
+    var queryURL = "http://api.openweathermap.org/data/2.5/weather?" +
     "q=fremont&appid=" + APIKey;
 
     $.ajax({
@@ -131,7 +131,7 @@ $("#btn4").on("click", function (event) {
 
 // San Francisco
 function displaySanFrancisco() {
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
+    var queryURL = "http://api.openweathermap.org/data/2.5/weather?" +
     "q=san francisco&appid=" + APIKey;
 
     $.ajax({
@@ -162,7 +162,7 @@ $("#btn5").on("click", function (event) {
 
 // Oakland
 function displayOakland() {
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
+    var queryURL = "http://api.openweathermap.org/data/2.5/weather?" +
     "q=oakland&appid=" + APIKey;
 
     $.ajax({
@@ -193,7 +193,7 @@ $("#btn6").on("click", function (event) {
 
 // Napa Valley
 function displayNapaValley() {
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
+    var queryURL = "http://api.openweathermap.org/data/2.5/weather?" +
     "q=napa valley&appid=" + APIKey;
 
     $.ajax({
@@ -224,7 +224,7 @@ $("#btn7").on("click", function (event) {
 
 // Santa Cruz
 function displaySantaCruz() {
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
+    var queryURL = "http://api.openweathermap.org/data/2.5/weather?" +
     "q=santa cruz&appid=" + APIKey;
 
     $.ajax({

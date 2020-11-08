@@ -1,7 +1,7 @@
 // 5 days weather forecast
 function forecast(city) {
 
-    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIKey;
+    var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIKey;
 
     $.ajax({
         url: queryURL,

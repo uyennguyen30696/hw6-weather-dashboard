@@ -6,7 +6,7 @@ var APIKey = "4ed4fdd9e1df72d92604a798aab2c98e";
 // Grab weather information for cities through the search bar
 function searchWeather(city) {
 
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" +
+    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" +
         city + "&appid=" + APIKey;
 
     $.ajax({
