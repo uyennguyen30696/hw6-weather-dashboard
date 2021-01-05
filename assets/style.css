@@ -1,0 +1,61 @@
+.hide {
+    display: none;
+}
+body {
+    background-image: url("../images/sky-828648_1920.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* backdrop-filter: blur(3px); */
+    color: white !important;
+}
+.wrapper {
+    margin: 3px;
+    padding-bottom: 50px;
+}
+.jumbotron {
+    padding-bottom: 30px !important;
+    background-color: transparent !important;
+} 
+h1 {
+    text-align: center;
+}
+h4 {
+    margin: auto;
+}
+form {
+    width: 100%;
+}
+#search-button {
+    border-color: white;
+    color: white;
+}
+#search-button:hover {
+    background-color: #14213E;
+}
+.dropdown-item:hover {
+    background-color: #A5A58D !important;
+}
+.current-weather {
+    text-align: center;
+}
+.current {
+    margin-bottom: 20px;
+}
+#temp {
+    font-size: 1.5em;
+}
+#uv {
+    margin: auto;
+}
+.forecast-5day {
+    margin: 20px;
+    text-align: center;
+}
+/* .fiveDay {
+    overflow: auto;
+    overflow-y: hidden;
+    -ms-overflow-y: hidden;
+} */
+.eachDay {
+    margin: 10px;
+}

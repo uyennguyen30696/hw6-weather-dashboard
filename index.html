@@ -5,131 +5,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="./assets/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
-
-    <div class="jumbotron">
-        <h1 class="display-8">Weather Dashboard</h1>
-    </div>
-
     <div class="wrapper">
-        <div class="search-cities">
-
-            <form class="search">
-                <input type="text" id="city-input" placeholder="Search cities...">
-                <button id="search-button" type="submit">Search</button>
-            </form>
-
-            <div class="clear">
-                <button id="clear-button">Clear result</button>
-            </div>
-        
-            <!-- These buttons are for an earlier version but are not used now, except past-button that is created dynamically in the script.js file-->
-            <div class="cities">
-                <!-- <div id="suggested-cities"> -->
-                <!-- <h3>Suggested cities</h3> -->
-                <!-- </div> --> 
-                <!-- <button id="btn1" type="button" class="btn btn-outline-primary btn-lg btn-block">San Jose</button>
-                <button id="btn2" type="button" class="btn btn-outline-primary btn-lg btn-block">Cupertino</button>
-                <button id="btn3" type="button" class="btn btn-outline-primary btn-lg btn-block">Mountain View</button>
-                <button id="btn4" type="button" class="btn btn-outline-primary btn-lg btn-block">Fremont</button>
-                <button id="btn5" type="button" class="btn btn-outline-primary btn-lg btn-block">San Francisco</button>
-                <button id="btn6" type="button" class="btn btn-outline-primary btn-lg btn-block">Oakland</button>
-                <button id="btn7" type="button" class="btn btn-outline-primary btn-lg btn-block">Napa Valley</button> -->
-                <!-- <button id="btn8" type="button" class="btn btn-outline-primary btn-lg btn-block">Santa Cruz</button> -->
-            </div>  
-
+        <div class="jumbotron">
+            <h1>Sky High Weather</h1>
+            <br>
+            <br>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <form class="d-flex">
+                        <input class="form-control me-2" id="city-input" type="search" placeholder="Search"
+                            aria-label="Search">
+                        <button class="btn btn-outline-success" id="search-button" type="submit">Search</button>
+                    </form>
+                </div>
+                <div class="container-fluid">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Search history
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li class="dropdown-item" id="clear" type="button">Clear</li>
+                                <hr>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </div>
 
-        <!-- Retrieved data will be dumped here -->
-        <div class="weather-view">
-            <h3>Weather Details</h3>
-            <!-- Current weather -->
-            <div class="current-weather hide">
-                <br>
-                <div class="city"></div>
-                <img id="current-icon" class="hide-image" alt="current weather icon">
-                <div class="temp"></div>
-                <div class="wind"></div>
-                <div class="humidity"></div>
-            </div>
-            <div class="uv"></div>
-            <br>
+        <div class="container-fluid">
 
-            <!-- 5 days forecast -->
-            <div class="5-day-forecast-block">
+            <section class="current-weather d-flex justify-content-center">
 
-                <h4 id="5-day-forecast"></h4>
-
-                <div class="forecast-display hide">
-                    <div class="date1"></div>
-                    <img id="day1-icon" class="hide-image" alt="forecast weather icon">
-                    <div class="temp1"></div>
-                    <div class="wind1"></div>
-                    <div class="humidity1"></div>
-                    <div class="uv1"></div>
+                <div class="current">
+                    <div id="city"></div>
+                    <div id="temp"></div>
                 </div>
 
-
-                <div class="forecast-display hide">
-                    <div class="date2"></div>
-                    <img id="day2-icon" class="hide-image" alt="forecast weather icon">
-                    <div class="temp2"></div>
-                    <div class="wind2"></div>
-                    <div class="humidity2"></div>
-                    <div class="uv2"></div>
+                <div class="current">
+                    <img id="current-icon" class="hide" alt="current weather icon">
+                    <div id="wind"></div>
+                    <div id="humidity"></div>
+                    <div id="uv"></div>
                 </div>
 
-                <div class="forecast-display hide">
-                    <div class="date3"></div>
-                    <img id="day3-icon" class="hide-image" alt="forecast weather icon">
-                    <div class="temp3"></div>
-                    <div class="wind3"></div>
-                    <div class="humidity3"></div>
-                    <div class="uv3"></div>
-                </div>
+            </section>
 
-                <div class="forecast-display hide">
-                    <div class="date4"></div>
-                    <img id="day4-icon" class="hide-image" alt="forecast weather icon">
-                    <div class="temp4"></div>
-                    <div class="wind4"></div>
-                    <div class="humidity4"></div>
-                    <div class="uv4"></div>
-                </div>
-
-                <div class="forecast-display hide">
-                    <div class="date5"></div>
-                    <img id="day5-icon" class="hide-image" alt="forecast weather icon">
-                    <div class="temp5"></div>
-                    <div class="wind5"></div>
-                    <div class="humidity5"></div>
-                    <div class="uv5"></div>
-                </div>
-            </div>
+            <section class="forecast-5day hide">
+                    <h4>5 days forecast</h4>
+                    <div class="fiveDay d-flex justify-content-center overflow-auto"></div>
+            </section>
         </div>
     </div>
 
-    <!-- Link the js logics -->
-    <script src="./assets-js/script.js"></script>
-    <!-- <script src="./assets-js/suggestedques.js"></script> -->
-    <script src="./assets-js/clearbtn.js"></script>
-    <script src="./assets-js/5daysforecast.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
+    <script src="./assets/script.js"></script>
 
-    <!-- Link jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-
-    <!-- Link js for Bootstrap -->
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
-</body>
 
-</html>
+</body>
