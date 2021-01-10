@@ -1,4 +1,4 @@
-# Server-Side APIs: Weather Dashboard
+# 06 Server-Side APIs: Weather Dashboard
 
 
 ## Description
@@ -7,7 +7,7 @@ This is a weather forecast application that runs in the browser and feature dyna
 
 <br>This application is mobile friendly by using a horizontal scroll bar to handle overflow content.
 
-<br>Check out the deployed link [here](https://uyennguyen30696.github.io/hw6-weather-dashboard/).
+<br>Check out the deployed link [here](https://uyennguyen30696.github.io/sky-high-weather/).
 
 ![screenshot](./images/screenshot.png)
 
